@@ -938,7 +938,7 @@ fn new_common<UART: Uart>(
     };
 
     esp!(unsafe { uart_param_config(UART::port(), &uart_config) })?;
-    esp!(unsafe { uart_intr_config(UART::port(), IntrFlags::to_native(config.intr_flags) as _) })?;
+    // esp!(unsafe { uart_intr_config(UART::port(), IntrFlags::to_native(config.intr_flags) as _) })?;
 
     esp!(unsafe {
         uart_set_pin(
